@@ -1,475 +1,479 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#e9e4dc">
-  <meta name="description" content="Diehls — Data expertise and local AI for businesses.">
-  <title>Diehls — Data Experts &amp; Local AI</title>
+
+  <title>Diehls — Data Experts & Local AI</title>
+
+  <meta
+    name="description"
+    content="Diehls — Data Experts and local AI for your Business. Cause only safe Data is good Data."
+  >
+
   <style>
     :root {
-      --bg: #e9e4dc;
-      --surface: #f2eee8;
-      --ink: #242321;
-      --muted: #68635c;
-      --line: #c9c1b6;
-      --accent: #766354;
-      --accent-dark: #514338;
-      --max-width: 1160px;
+      --background: #f2f0eb;
+      --surface: #e8e5de;
+      --text: #292925;
+      --muted: #77746c;
+      --accent: #8b7865;
+      --border: #d8d3ca;
+      --white: #faf9f6;
     }
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--bg);
-      font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
+
     a {
       color: inherit;
+      text-decoration: none;
     }
-    .wrap {
-      width: min(var(--max-width), calc(100% - 48px));
-      margin-inline: auto;
+
+    .container {
+      width: min(1120px, 88%);
+      margin: 0 auto;
     }
+
     header {
-      border-bottom: 1px solid var(--line);
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
     }
-    .topbar {
-      min-height: 86px;
+
+    .navigation {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 24px;
     }
-    .brand {
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 1.05rem;
-      font-weight: 750;
-      letter-spacing: .11em;
-      text-transform: uppercase;
+
+    .logo {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -1px;
     }
-    nav {
+
+    .navigation nav {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 30px;
+      font-size: 14px;
     }
-    nav a {
+
+    .navigation nav a {
       color: var(--muted);
-      text-decoration: none;
-      font-size: .91rem;
-      transition: color .2s ease;
+      transition: color 0.2s ease;
     }
-    nav a:hover {
-      color: var(--ink);
+
+    .navigation nav a:hover {
+      color: var(--text);
     }
+
     .hero {
+      min-height: 610px;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+      grid-template-columns: 1.15fr 0.85fr;
       align-items: center;
-      gap: clamp(40px, 7vw, 90px);
-      padding: clamp(74px, 10vw, 125px) 0 100px;
+      gap: 70px;
+      padding: 90px 0;
     }
+
     .eyebrow {
-      margin: 0 0 22px;
-      color: var(--accent-dark);
-      font-size: .78rem;
+      color: var(--accent);
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: .16em;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      margin-bottom: 24px;
     }
+
     h1 {
-      max-width: 740px;
-      margin: 0;
-      font-size: clamp(3rem, 6.2vw, 5.8rem);
-      font-weight: 570;
-      letter-spacing: -.07em;
-      line-height: 1.02;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.06;
+      letter-spacing: -3px;
+      font-weight: 500;
+      margin-bottom: 28px;
     }
-    h1 span {
-      display: block;
-      color: var(--accent-dark);
-      font-weight: 450;
-    }
-    .hero-copy {
-      max-width: 500px;
-      margin: 28px 0 0;
+
+    .hero-description {
+      max-width: 520px;
       color: var(--muted);
-      font-size: clamp(1rem, 1.3vw, 1.12rem);
+      font-size: 17px;
+      margin-bottom: 34px;
     }
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px 24px;
-      margin-top: 32px;
-    }
+
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 47px;
-      padding: 0 19px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: #f8f5f0;
-      text-decoration: none;
-      font-size: .9rem;
-      transition: background .2s ease, color .2s ease;
+      display: inline-block;
+      background: var(--text);
+      color: var(--white);
+      padding: 14px 23px;
+      font-size: 14px;
+      transition: background 0.2s ease;
     }
+
     .button:hover {
-      background: transparent;
-      color: var(--ink);
-    }
-    .text-link {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: .9rem;
-    }
-    .text-link:hover {
-      color: var(--ink);
-    }
-    .hero-aside {
-      border-left: 1px solid var(--line);
-      padding: 12px 0 12px 30px;
-    }
-    .aside-label {
-      margin: 0 0 24px;
-      color: var(--accent-dark);
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-    .aside-statement {
-      margin: 0;
-      max-width: 300px;
-      font-size: clamp(1.45rem, 2.5vw, 2.1rem);
-      font-weight: 450;
-      line-height: 1.25;
-      letter-spacing: -.04em;
-    }
-    .aside-rule {
-      width: 54px;
-      height: 2px;
-      margin-top: 28px;
       background: var(--accent);
     }
-    .section {
-      border-top: 1px solid var(--line);
-      padding: 76px 0;
+
+    .hero-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 44px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .section-heading {
-      display: grid;
-      grid-template-columns: .65fr 1.35fr;
-      gap: 40px;
-      margin-bottom: 42px;
-    }
-    .section-kicker {
-      color: var(--accent-dark);
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-    h2 {
-      max-width: 700px;
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.3rem);
+
+    .hero-panel h2 {
+      font-size: 30px;
       font-weight: 500;
-      letter-spacing: -.055em;
-      line-height: 1.1;
+      line-height: 1.25;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
     }
+
+    .hero-panel p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .section {
+      padding: 95px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 500;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
     .services {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
-    .service {
-      padding: 26px 26px 12px 0;
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 30px;
     }
-    .service + .service {
-      border-left: 1px solid var(--line);
-      padding-left: 26px;
-    }
+
     .service-number {
+      display: block;
       color: var(--accent);
-      font-size: .78rem;
-      letter-spacing: .12em;
+      font-size: 13px;
+      margin-bottom: 32px;
     }
-    h3 {
-      margin: 20px 0 10px;
-      font-size: 1.25rem;
-      font-weight: 600;
-      letter-spacing: -.025em;
+
+    .service-card h3 {
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 14px;
     }
-    .service p {
+
+    .service-card p {
       color: var(--muted);
-      margin: 0;
-      max-width: 430px;
+      font-size: 14px;
     }
+
     .principles {
-      display: grid;
-      grid-template-columns: .65fr 1.35fr;
-      gap: 40px;
       background: var(--surface);
-      border: 1px solid var(--line);
-      padding: clamp(28px, 5vw, 56px);
     }
-    .principles h2 {
-      max-width: 420px;
-    }
-    .principle-list {
+
+    .principles-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 26px 34px;
+      gap: 70px;
+      align-items: start;
     }
-    .principle {
-      border-top: 1px solid var(--line);
-      padding-top: 13px;
+
+    .principles-content h2 {
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      font-weight: 500;
     }
-    .principle strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 1rem;
-    }
-    .principle p {
+
+    .principles-content p {
       color: var(--muted);
-      margin: 0;
-      font-size: .92rem;
+      margin-bottom: 18px;
     }
+
+    .slogan {
+      margin-top: 28px;
+      padding-left: 20px;
+      border-left: 2px solid var(--accent);
+      color: var(--text);
+      font-size: 18px;
+    }
+
     .contact {
       display: flex;
       justify-content: space-between;
-      align-items: end;
-      gap: 36px;
+      align-items: center;
+      gap: 40px;
     }
+
     .contact h2 {
-      max-width: 650px;
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 500;
+      letter-spacing: -1.5px;
+      margin-bottom: 15px;
     }
+
     .contact p {
       color: var(--muted);
-      max-width: 520px;
-      margin: 18px 0 0;
     }
+
     footer {
-      border-top: 1px solid var(--line);
-      padding: 24px 0 32px;
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
       color: var(--muted);
-      font-size: .82rem;
+      font-size: 12px;
     }
-    .footer-inner {
+
+    .footer-content {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
-      flex-wrap: wrap;
     }
-    @media (max-width: 800px) {
+
+    @media (max-width: 760px) {
+      .navigation {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .navigation nav {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
       .hero {
+        min-height: auto;
         grid-template-columns: 1fr;
-        gap: 44px;
+        gap: 40px;
+        padding: 70px 0;
       }
-      .hero-aside {
-        max-width: 460px;
+
+      h1 {
+        letter-spacing: -2px;
       }
-      .section-heading,
-      .principles {
-        grid-template-columns: 1fr;
-        gap: 22px;
+
+      .hero-panel {
+        padding: 30px;
       }
+
+      .section {
+        padding: 70px 0;
+      }
+
       .services {
         grid-template-columns: 1fr;
       }
-      .service,
-      .service + .service {
-        padding: 23px 0;
-        border-left: 0;
+
+      .principles-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
-      .service + .service {
-        border-top: 1px solid var(--line);
-      }
+
       .contact {
-        align-items: start;
-        flex-direction: column;
-      }
-    }
-    @media (max-width: 540px) {
-      .wrap {
-        width: min(var(--max-width), calc(100% - 32px));
-      }
-      .topbar {
         align-items: flex-start;
         flex-direction: column;
-        justify-content: center;
-        padding: 20px 0;
-        gap: 15px;
       }
-      nav {
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-      h1 {
-        font-size: clamp(2.8rem, 14vw, 4.2rem);
-      }
-      .principle-list {
-        grid-template-columns: 1fr;
-      }
-      .hero {
-        padding-top: 68px;
-        padding-bottom: 72px;
-      }
-      .hero-aside {
-        padding-left: 20px;
-      }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
+
+      .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <div class="wrap topbar">
-      <a class="brand" href="#top">Diehls</a>
-      <nav aria-label="Main navigation">
-        <a href="#expertise">Expertise</a>
-        <a href="#principles">Principles</a>
-        <a href="#contact">Contact</a>
+    <div class="container navigation">
+      <a class="logo" href="#home">Diehls</a>
+
+      <nav aria-label="Hauptnavigation">
+        <a href="#services">Leistungen</a>
+        <a href="#principles">Prinzipien</a>
+        <a href="#contact">Kontakt</a>
       </nav>
     </div>
   </header>
-  <main id="top">
-    <section class="wrap hero">
+
+  <main>
+    <section class="container hero" id="home">
       <div>
-        <p class="eyebrow">Data · Security · Local AI</p>
-        <h1>
-          Data Experts
-          <span>and local AI</span>
-          for your Business
-        </h1>
-        <p class="hero-copy">
-          Cause only safe Data is good Data.
+        <p class="eyebrow">Data · Technology · AI</p>
+
+        <h1>Data Experts and local AI for your Business</h1>
+
+        <p class="hero-description">
+          Wir helfen Unternehmen, Daten sinnvoll zu nutzen,
+          Prozesse zu verbessern und KI dort einzusetzen,
+          wo sie echten Mehrwert schafft.
         </p>
-        <div class="hero-actions">
-          <a class="button" href="#contact">Start a conversation</a>
-          <a class="text-link" href="#expertise">Explore our expertise &rarr;</a>
-        </div>
+
+        <a class="button" href="#contact">Lassen Sie uns sprechen</a>
       </div>
-      <aside class="hero-aside">
-        <p class="aside-label">A considered approach</p>
-        <p class="aside-statement">
-          Clear data. Thoughtful technology. More control.
-        </p>
-        <div class="aside-rule"></div>
-      </aside>
-    </section>
-    <section class="section" id="expertise">
-      <div class="wrap">
-        <div class="section-heading">
-          <div class="section-kicker">What we do</div>
-          <h2>
-            Technology should make your business clearer, safer and more capable.
-          </h2>
-        </div>
-        <div class="services">
-          <article class="service">
-            <span class="service-number">01 / DATA</span>
-            <h3>Data expertise</h3>
-            <p>
-              We help businesses understand, structure and use their data —
-              with a focus on quality, control and practical value.
-            </p>
-          </article>
-          <article class="service">
-            <span class="service-number">02 / LOCAL AI</span>
-            <h3>AI on your terms</h3>
-            <p>
-              Explore local AI solutions that keep sensitive information
-              closer to your organisation and your control.
-            </p>
-          </article>
-          <article class="service">
-            <span class="service-number">03 / DELIVERY</span>
-            <h3>Practical integration</h3>
-            <p>
-              From first concept to implementation, we focus on solutions
-              that fit your existing workflows and real needs.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="wrap section" id="principles">
-      <div class="principles">
-        <div>
-          <div class="section-kicker">Our principles</div>
-          <h2>Good technology earns trust.</h2>
-        </div>
-        <div class="principle-list">
-          <div class="principle">
-            <strong>Privacy first</strong>
-            <p>
-              Sensitive data deserves thoughtful handling and clear boundaries.
-            </p>
-          </div>
-          <div class="principle">
-            <strong>Clarity over hype</strong>
-            <p>
-              Understandable solutions, honest trade-offs and no technology
-              for its own sake.
-            </p>
-          </div>
-          <div class="principle">
-            <strong>Built around you</strong>
-            <p>
-              Tools and workflows should serve your organisation, not the other way around.
-            </p>
-          </div>
-          <div class="principle">
-            <strong>Made to be useful</strong>
-            <p>
-              Every recommendation should connect to a real operational need.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="wrap section contact" id="contact">
-      <div>
-        <div class="section-kicker">Get in touch</div>
-        <h2>Let’s make your data work for you.</h2>
+
+      <div class="hero-panel">
+        <h2>Clear data.<br>Thoughtful technology.<br>More control.</h2>
+
         <p>
-          Have a question or a challenge to solve? Get in touch to start
-          a conversation about data, security and local AI.
+          Wir verbinden Datenexpertise mit lokaler KI –
+          mit Fokus auf Sicherheit, Kontrolle und
+          praktische Lösungen für Ihr Unternehmen.
         </p>
       </div>
-      <a class="button" href="mailto:hello@diehls.de">
-        hello@diehls.de &rarr;
-      </a>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Was wir tun</p>
+
+          <h2>Technologie, die zu Ihrem Unternehmen passt.</h2>
+
+          <p>
+            Von einer klaren Datenbasis bis zum gezielten Einsatz
+            lokaler KI: Wir entwickeln Lösungen, die sich an Ihren
+            Anforderungen orientieren.
+          </p>
+        </div>
+
+        <div class="services">
+          <article class="service-card">
+            <span class="service-number">01 / DATA</span>
+
+            <h3>Data Expertise</h3>
+
+            <p>
+              Daten verstehen, strukturieren und nutzbar machen.
+              Wir unterstützen Sie dabei, aus Daten eine
+              belastbare Grundlage für Entscheidungen zu schaffen.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02 / AI</span>
+
+            <h3>Local AI</h3>
+
+            <p>
+              KI-Lösungen mit mehr Kontrolle über Ihre Daten.
+              Wir betrachten, wie lokale KI sinnvoll in Ihre
+              bestehende Arbeitsumgebung integriert werden kann.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03 / STRATEGY</span>
+
+            <h3>Practical Solutions</h3>
+
+            <p>
+              Keine Technologie um ihrer selbst willen.
+              Wir konzentrieren uns auf konkrete Anforderungen,
+              nachvollziehbare Ergebnisse und praktikable Umsetzung.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section principles" id="principles">
+      <div class="container principles-content">
+        <div>
+          <p class="eyebrow">Unser Grundsatz</p>
+
+          <h2>Cause only safe Data is good Data.</h2>
+        </div>
+
+        <div>
+          <p>
+            Daten und KI können Unternehmen neue Möglichkeiten
+            eröffnen. Dafür braucht es jedoch Vertrauen,
+            verantwortungsvollen Umgang mit Informationen und
+            eine Technologie, die zum jeweiligen Anwendungsfall passt.
+          </p>
+
+          <p>
+            Deshalb stehen Datensicherheit, Transparenz und
+            Kontrolle bei unseren Überlegungen im Mittelpunkt.
+          </p>
+
+          <div class="slogan">
+            Data Experts and local AI for your Business
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact">
+        <div>
+          <p class="eyebrow">Kontakt</p>
+
+          <h2>Lassen Sie uns sprechen.</h2>
+
+          <p>
+            Sie möchten Daten besser nutzen oder lokale KI
+            in Ihrem Unternehmen einsetzen?
+          </p>
+        </div>
+
+        <a class="button" href="mailto:hello@diehls.de">
+          hello@diehls.de
+        </a>
+      </div>
     </section>
   </main>
+
   <footer>
-    <div class="wrap footer-inner">
+    <div class="container footer-content">
       <span>© <span id="year"></span> Diehls</span>
-      <span>Data · Security · Local AI</span>
+      <span>Data Experts and local AI for your Business</span>
     </div>
   </footer>
+
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
