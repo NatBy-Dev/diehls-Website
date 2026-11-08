@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="DIEHLS – Data Experts and local AI for your Business. Cause only safe Data is good Data."
+    content="DIEHLS – Independent Engineering Portfolio. Database Engineering, Data Integration, Automation and Local AI."
   >
   <meta name="theme-color" content="#0b0c10">
-  <title>DIEHLS — Consulting & Solutions</title>
+  <meta property="og:title" content="DIEHLS — Engineering & Technology">
+  <meta
+    property="og:description"
+    content="Database Engineering. Data Integration. Automation. Local AI."
+  >
+  <meta property="og:type" content="website">
+  <title>DIEHLS — Engineering & Technology</title>
   <style>
     :root {
       --bg: #0b0c10;
@@ -58,30 +64,30 @@
       font-weight: 750;
       letter-spacing: -0.06em;
     }
-    .nav-label {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 28px;
       color: var(--muted);
       font-size: 12px;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
     }
-    .nav-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .nav-label {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
     /* Hero */
     .hero {
       position: relative;
-      min-height: min(570px, calc(100svh - 65px));
+      min-height: 570px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 65px 0 45px;
+      padding: 75px 0 45px;
       overflow: hidden;
     }
     .hero::before {
@@ -107,18 +113,16 @@
       align-items: center;
       gap: 12px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       margin-bottom: 24px;
     }
     .eyebrow::before {
       content: "";
-      display: block;
       width: 28px;
       height: 1px;
       background: var(--accent);
-      flex-shrink: 0;
     }
     h1 {
       max-width: 1000px;
@@ -131,22 +135,25 @@
       color: var(--muted);
       font-weight: 450;
     }
+    .hero-description {
+      max-width: 620px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
     .hero-bottom {
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-end;
-      gap: 24px;
-      margin-top: 42px;
+      align-items: center;
+      margin-top: 55px;
       padding-top: 20px;
       border-top: 1px solid var(--border);
     }
-    .hero-bottom .slogan {
+    .hero-bottom p {
       color: var(--text);
-      font-size: 15px;
-      font-weight: 500;
-      text-align: left;
+      font-size: 14px;
     }
-    /* Sections */
+    /* General sections */
     section.content-section {
       padding: 80px 0;
       border-top: 1px solid var(--border);
@@ -159,7 +166,7 @@
     }
     .section-number {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
@@ -170,20 +177,20 @@
       letter-spacing: -0.055em;
     }
     .section-copy {
-      max-width: 620px;
+      max-width: 650px;
       margin-top: 22px;
       color: var(--muted);
       font-size: 15px;
       line-height: 1.9;
     }
-    /* Service cards */
+    /* Expertise */
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
     .card {
-      min-height: 230px;
+      min-height: 215px;
       padding: 28px;
       background: var(--surface);
       border: 1px solid var(--border);
@@ -198,7 +205,7 @@
     }
     .card-number {
       display: block;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
       color: var(--accent);
       font-size: 12px;
     }
@@ -213,6 +220,119 @@
       font-size: 13px;
       line-height: 1.8;
     }
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .project {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: border-color 0.25s ease;
+    }
+    .project:hover {
+      border-color: rgba(181, 200, 255, 0.4);
+    }
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+    .project-number {
+      color: var(--accent);
+      font-size: 12px;
+    }
+    .project-type {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .project h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+      font-weight: 550;
+      letter-spacing: -0.035em;
+    }
+    .project p {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .tag {
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+    .project-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    /* Technology */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .tech-item {
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    .tech-item h3 {
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 550;
+    }
+    .tech-item p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    /* Lab */
+    .lab {
+      padding: 38px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    .lab h3 {
+      margin: 18px 0 12px;
+      font-size: 24px;
+      font-weight: 550;
+    }
+    .lab p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    .lab-status {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
     /* Principle */
     .principle {
       padding: 45px;
@@ -222,6 +342,7 @@
     }
     .principle h2 {
       max-width: 800px;
+      margin-top: 24px;
     }
     .principle h2 span {
       color: var(--muted);
@@ -233,6 +354,29 @@
       font-size: 15px;
       line-height: 1.9;
     }
+    /* Contact */
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 35px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    .contact p {
+      max-width: 550px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .contact-label {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
     /* Footer */
     footer {
       display: flex;
@@ -242,7 +386,7 @@
       padding: 25px 0;
       border-top: 1px solid var(--border);
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
     }
     .footer-logo {
       color: var(--text);
@@ -279,10 +423,12 @@
       .logo {
         font-size: 19px;
       }
-      .nav-label {
-        gap: 7px;
+      .nav-links {
+        gap: 12px;
         font-size: 10px;
-        letter-spacing: 0;
+      }
+      .nav-label {
+        display: none;
       }
       .hero {
         min-height: auto;
@@ -297,18 +443,15 @@
       .eyebrow {
         font-size: 9px;
         letter-spacing: 0.12em;
-        margin-bottom: 22px;
       }
       h1 {
         font-size: clamp(38px, 9.5vw, 60px);
       }
+      .hero-description {
+        font-size: 14px;
+      }
       .hero-bottom {
         margin-top: 35px;
-        padding-top: 18px;
-      }
-      .hero-bottom .slogan {
-        text-align: left;
-        font-size: 13px;
       }
       section.content-section {
         padding: 60px 0;
@@ -332,31 +475,38 @@
       .card-number {
         margin-bottom: 25px;
       }
+      .project {
+        padding: 24px;
+      }
+      .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .lab,
       .principle {
+        padding: 26px;
+      }
+      .contact {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 26px;
       }
       footer {
         flex-wrap: wrap;
-        font-size: 11px;
       }
     }
-    /* Very small screens */
     @media (max-width: 380px) {
       .container {
         width: calc(100% - 28px);
       }
-      .nav-label {
+      .nav-links {
+        gap: 9px;
         font-size: 9px;
-        gap: 6px;
-      }
-      .hero {
-        padding-top: 60px;
       }
       h1 {
         font-size: 36px;
       }
-      .eyebrow {
-        font-size: 8px;
+      .tech-grid {
+        grid-template-columns: 1fr;
       }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -377,107 +527,355 @@
     <!-- Navigation -->
     <nav>
       <a href="#" class="logo">DIEHLS.</a>
-      <div class="nav-label">
-        <span class="nav-dot"></span>
-        <span>Consulting · Solutions</span>
+      <div class="nav-links">
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#lab">Lab</a>
       </div>
     </nav>
     <!-- Hero -->
     <header class="hero">
       <div class="hero-content">
         <div class="eyebrow">
-          Strategy · Security · Intelligence
+          Independent Engineering Portfolio
         </div>
         <h1>
-          Data Experts and<br>
-          <span>local AI for your Business</span>
+          Engineering<br>
+          <span>reliable data solutions.</span>
         </h1>
+        <p class="hero-description">
+          Exploring the intersection of database engineering,
+          data integration, automation and local artificial
+          intelligence.
+          Building reliable systems through practical engineering,
+          thoughtful architecture and continuous learning.
+        </p>
       </div>
       <div class="hero-bottom">
-        <p class="slogan">
-          — Cause only safe Data is good Data
+        <p>
+          Database Engineering · Data Integration · Automation · Local AI
         </p>
       </div>
     </header>
-    <!-- Section 01 -->
+    <!-- Section 01: Approach -->
     <section class="content-section">
       <div class="section-heading">
-        <div class="section-number">01 / Unser Ansatz</div>
+        <div class="section-number">
+          01 / Approach
+        </div>
         <div>
           <h2>
-            Daten verstehen.<br>
-            Möglichkeiten nutzen.
+            Technology with<br>
+            a practical purpose.
           </h2>
           <p class="section-copy">
-            Technologie soll neue Möglichkeiten schaffen, ohne die
-            Kontrolle über sensible Informationen aus der Hand zu geben.
-            Wir verbinden strategisches Denken mit modernen,
-            verantwortungsvollen Technologielösungen.
+            Reliable technology starts with understanding the
+            underlying problem. Good engineering combines
+            maintainable solutions, efficient processes and
+            responsible handling of data.
+            The focus is on systems that work reliably,
+            remain understandable and can evolve over time.
           </p>
         </div>
       </div>
     </section>
-    <!-- Section 02 -->
-    <section class="content-section">
+    <!-- Section 02: Expertise -->
+    <section id="expertise" class="content-section">
       <div class="section-heading">
-        <div class="section-number">02 / Unsere Leistungen</div>
+        <div class="section-number">
+          02 / Expertise
+        </div>
         <div>
-          <h2>Technologie mit Substanz.</h2>
+          <h2>Engineering disciplines.</h2>
           <p class="section-copy">
-            Von einer klaren Datenstrategie bis zu sicheren,
-            lokal betriebenen KI-Lösungen: Im Mittelpunkt stehen
-            sinnvolle Anwendungen, Datenschutz und nachhaltiger Nutzen.
+            A practical focus on data-intensive systems,
+            infrastructure and automation.
+            Combining established technologies with modern
+            engineering approaches.
           </p>
         </div>
       </div>
       <div class="cards">
         <article class="card">
           <span class="card-number">01</span>
-          <h3>Data Strategy</h3>
+          <h3>Database Engineering</h3>
           <p>
-            Datenpotenziale erkennen, Strukturen schaffen und
-            fundierte Entscheidungen ermöglichen.
+            Database operations, SQL development, migration,
+            performance analysis, reliability and data integrity.
           </p>
         </article>
         <article class="card">
           <span class="card-number">02</span>
-          <h3>Local AI Solutions</h3>
+          <h3>Data Integration</h3>
           <p>
-            KI-Anwendungen mit Fokus auf lokale Verarbeitung,
-            Kontrolle und den Schutz vertraulicher Informationen.
+            Automated data ingestion, ETL processes,
+            structured data transformation and validation.
           </p>
         </article>
         <article class="card">
           <span class="card-number">03</span>
-          <h3>Privacy & Security</h3>
+          <h3>Automation & Infrastructure</h3>
           <p>
-            Datenschutz und Sicherheit von Anfang an mitdenken,
-            statt sie erst im Nachhinein zu berücksichtigen.
+            Scripting, process automation, monitoring,
+            Linux and Windows environments and operational reliability.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card-number">04</span>
+          <h3>Local AI & Private LLMs</h3>
+          <p>
+            Exploring locally operated language models,
+            inference performance, quantization and
+            privacy-conscious AI applications.
           </p>
         </article>
       </div>
     </section>
-    <!-- Section 03 -->
+    <!-- Section 03: Projects -->
+    <section id="projects" class="content-section">
+      <div class="section-heading">
+        <div class="section-number">
+          03 / Engineering Projects
+        </div>
+        <div>
+          <h2>Practical problem solving.</h2>
+          <p class="section-copy">
+            Selected engineering case studies demonstrating
+            approaches to data processing, system reliability
+            and performance optimization.
+            Descriptions are intentionally abstracted and
+            contain no confidential project or customer information.
+          </p>
+        </div>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <div class="project-top">
+            <span class="project-number">PROJECT 01</span>
+            <span class="project-type">Data Integration</span>
+          </div>
+          <h3>Automated XML Data Integration</h3>
+          <p>
+            Design of an automated data ingestion workflow
+            for structured XML data.
+            The processing approach combines data extraction,
+            format transformation, database staging,
+            validation and controlled database updates.
+            Additional mechanisms support integrity verification,
+            execution logging, error notifications and
+            repeatable processing.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">XML</span>
+            <span class="tag">SQL</span>
+            <span class="tag">ETL</span>
+            <span class="tag">Shell Scripting</span>
+            <span class="tag">Data Integrity</span>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-top">
+            <span class="project-number">PROJECT 02</span>
+            <span class="project-type">Performance Engineering</span>
+          </div>
+          <h3>Memory-Efficient XML Processing</h3>
+          <p>
+            Investigation of a production processing issue
+            caused by excessive memory consumption.
+            The analysis identified the limitations of
+            document-oriented XML processing for larger
+            input files.
+            Replacing the DOM-based approach with
+            event-driven SAX parsing reduced memory
+            requirements and restored reliable processing.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">XML</span>
+            <span class="tag">SAX</span>
+            <span class="tag">DOM</span>
+            <span class="tag">Memory Optimization</span>
+            <span class="tag">Troubleshooting</span>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-top">
+            <span class="project-number">PROJECT 03</span>
+            <span class="project-type">Database Engineering</span>
+          </div>
+          <h3>Database Migration & Modernization</h3>
+          <p>
+            Planning and execution of a major relational
+            database version migration.
+            The work involved migration preparation,
+            compatibility considerations, data transfer,
+            validation and commissioning.
+            The focus was on maintaining data consistency
+            and ensuring a controlled transition.
+          </p>
+          <div class="tags">
+            <span class="tag">Oracle Database</span>
+            <span class="tag">SQL</span>
+            <span class="tag">PL/SQL</span>
+            <span class="tag">Migration</span>
+            <span class="tag">Database Operations</span>
+          </div>
+        </article>
+      </div>
+      <p class="project-note">
+        The projects describe generalized technical approaches.
+        They do not disclose employer identities, customer data,
+        internal system names or confidential implementation details.
+      </p>
+    </section>
+    <!-- Section 04: Technology -->
+    <section class="content-section">
+      <div class="section-heading">
+        <div class="section-number">
+          04 / Technology
+        </div>
+        <div>
+          <h2>Tools & technologies.</h2>
+          <p class="section-copy">
+            Technologies used across database engineering,
+            data processing, automation and infrastructure.
+            The selection reflects practical experience
+            and ongoing technical exploration.
+          </p>
+        </div>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <h3>Databases</h3>
+          <p>
+            Oracle Database<br>
+            Microsoft SQL Server<br>
+            IBM Informix<br>
+            SQL · PL/SQL
+          </p>
+        </div>
+        <div class="tech-item">
+          <h3>Development</h3>
+          <p>
+            Python<br>
+            SQL<br>
+            PL/SQL<br>
+            PowerShell
+          </p>
+        </div>
+        <div class="tech-item">
+          <h3>Data Processing</h3>
+          <p>
+            ETL<br>
+            XML<br>
+            Pentaho Data Integration<br>
+            Data Validation
+          </p>
+        </div>
+        <div class="tech-item">
+          <h3>Infrastructure</h3>
+          <p>
+            Linux<br>
+            Windows Server<br>
+            Docker<br>
+            Monitoring
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Section 05: Lab -->
+    <section id="lab" class="content-section">
+      <div class="section-heading">
+        <div class="section-number">
+          05 / Engineering Lab
+        </div>
+        <div>
+          <h2>Exploring what comes next.</h2>
+          <p class="section-copy">
+            Independent technical experiments and continuous
+            learning beyond established production technologies.
+          </p>
+        </div>
+      </div>
+      <div class="lab">
+        <span class="lab-status">
+          Research & Experimentation
+        </span>
+        <h3>Local LLM Performance Lab</h3>
+        <p>
+          Exploring locally operated language models and
+          AI inference using open-source technologies.
+          Areas of interest include model quantization,
+          CPU and GPU inference, memory consumption,
+          performance measurement and API integration.
+          The goal is to understand how private,
+          locally operated AI systems can be integrated
+          into practical software applications.
+        </p>
+        <div class="tags">
+          <span class="tag">llama.cpp</span>
+          <span class="tag">Qwen</span>
+          <span class="tag">MiniCPM</span>
+          <span class="tag">Python</span>
+          <span class="tag">Local Inference</span>
+        </div>
+      </div>
+    </section>
+    <!-- Section 06: Principle -->
     <section class="content-section">
       <div class="principle">
-        <div class="section-number">03 / Unser Grundsatz</div>
-        <h2 style="margin-top: 24px;">
-          Cause only safe Data<br>
-          <span>is good Data.</span>
+        <div class="section-number">
+          06 / Engineering Principle
+        </div>
+        <h2>
+          Good data deserves<br>
+          <span>to be protected.</span>
         </h2>
         <p>
-          Innovation braucht Vertrauen. Deshalb sollten Daten dort
-          geschützt bleiben, wo es darauf ankommt. Unser Anspruch:
-          Technologie sinnvoll einsetzen und dabei Sicherheit,
-          Transparenz und Kontrolle bewahren.
+          Technology should create opportunities without
+          sacrificing reliability, transparency or control.
+          Responsible engineering means understanding
+          not only what a system can do, but also how
+          it handles information and how reliably
+          it performs over time.
         </p>
+      </div>
+    </section>
+    <!-- Section 07: Contact -->
+    <section class="content-section">
+      <div class="contact">
+        <div>
+          <span class="contact-label">
+            Contact & Collaboration
+          </span>
+          <h2 style="margin-top: 14px;">
+            Let's connect.
+          </h2>
+          <p>
+            Interested in technology, data engineering
+            and practical approaches to modern IT systems?
+            Get in touch.
+          </p>
+        </div>
+        <!-- Add a dedicated domain email address here
+             when it has been configured. -->
+        <a
+          href="mailto:contact@diehls.de"
+          class="tag"
+          style="font-size: 12px; padding: 12px 18px;"
+        >
+          Get in touch →
+        </a>
       </div>
     </section>
     <!-- Footer -->
     <footer>
       <a href="#" class="footer-logo">DIEHLS.</a>
-      <span>Independent Technology Consulting</span>
-      <span>© <span id="year"></span> DIEHLS</span>
+      <span>Independent Engineering Portfolio</span>
+      <span>
+        © <span id="year"></span> DIEHLS
+      </span>
     </footer>
   </div>
   <script>
